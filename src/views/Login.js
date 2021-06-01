@@ -1,86 +1,96 @@
 import React from 'react'
-import { Text, StyleSheet, View, Dimensions, Image, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity, Dimensions, TextInput } from 'react-native'
+ 
+export let width = Dimensions.get('window').width
 
-import commonStyles from '../commonStyles'
-
-export let width = Dimensions.get('window').width //pega o tamanho da tela
-//const logo = require('../assets/img/trabalho.jpg') //inserindo imagem
-
-export default props => {
-    return (
-    <View style={styles.container}>
-        <View style={styles.header}>
-            {/* <View style={styles.logo}>
-                <Image source={logo} width={78} height={79} />
-            </View> */}
-
-            <View style={styles.headerContent}>
-                <View style={styles.headerContentItemActive}>
-                    <TouchableOpacity style={styles.headerContentButton}> 
-                        <Text style={styles.headerContentButtonTextActive}>Login</Text>
-                    </TouchableOpacity>
-                </View>
-
-                <View style={styles.headerContentItem}>
-                    <TouchableOpacity style={styles.headerContentButton}> 
-                        <Text style={styles.headerContentButtonText}>Sing</Text>
-                    </TouchableOpacity>
-                </View>
+export default function Login ({ navigation }){
+    return(
+        <View style={styles.container}>
+            <View >
+                <TextInput placeholder="Nome" 
+                style={styles.inputUser}></TextInput>
             </View>
 
-        </View>
+            <View>
+                <TextInput placeholder="Senha"
+                secureTextEntry={true}
+                style={styles.inputUser}></TextInput>
+            </View>
 
-        <View style={styles.main}></View>
-        <View style={styles.bottom}></View>
-    </View>
+            <View>
+                <TouchableOpacity style={styles.btnLogin}>
+                    <Text>Login</Text>
+                </TouchableOpacity>
+            </View>
+
+            <View>
+                <TouchableOpacity style={styles.btnSing}>
+                    <Text>Sing-in</Text>
+                </TouchableOpacity>
+            </View>
+
+
+            <View>
+                <TouchableOpacity style={styles.btnCadastreSe}
+                    onPress={ () => navigation.navigate('Cadastro')}
+                >
+                    <Text>
+                        Cadastre-se
+                    </Text>
+                </TouchableOpacity>    
+            </View>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
+        flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
-        paddingLeft: 25,
-        paddingRight: 25,
-        paddingTop: 25,
-        backgroundColor: commonStyles.colors.mainContainer
-    },
-    logo: {
+        flexDirection: 'column'
+    }, 
+
+    btnLogin: {
+        width: width-80, 
+        height: 60,
         alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 5,
+        paddingBottom: 10,
+        borderRadius: 30,
+        borderWidth: 2,
+        borderColor: '#3646DB', 
+        backgroundColor: '#3646DB',
+        bottom: -140       
     },
-    headerContent: {
-        flexDirection: 'row',
-        marginTop: 35,
+    btnSing: {
+        width: width-80,
+        height: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 5,
+        paddingBottom: 10,
+        borderRadius: 30,
+        borderColor: '#d6e6f2',
+        borderWidth:2,
+        marginTop: 10,
+        backgroundColor:'#d6e6f2',
+        bottom: -150
     },
-    headerContentItem: {
-        width: width/2,
+    inputUser: {
+        width: width-50,
         paddingTop: 10,
         paddingBottom: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: '#CCC',
-    },
-    headerContentItemActive: {
-        width: width/2,
-        paddingTop: 10,
-        paddingBottom: 10,
-        borderBottomWidth: 4,
+        borderBottomWidth: 2,
         borderBottomColor: '#3646DB',
-        alignItems: 'center'
-
-
+        alignItems: 'center',
+        marginTop: 20,
+        bottom: -85
     },
-    headerContentButton: {
-        width: width/2,
-        alignItems: 'center'
-    },
-    headerContentButtonText: {
-        fontWeight: 'bold',
-        color: '#CCC',
-        fontSize: 16
-    },
-    headerContentButtonTextActive: {
-        fontWeight: 'bold',
-        fontSize: 16,
+    btnCadastreSe: {
+        bottom: -160
     }
-    
+
+
 })

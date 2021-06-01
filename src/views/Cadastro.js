@@ -1,88 +1,114 @@
 import React from 'react'
-import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native'
+import { Text, 
+        TextInput,
+        View,
+        StyleSheet,
+        TouchableOpacity,
+        Dimensions,
+    }
+ from 'react-native'
 
 export let width = Dimensions.get('window').width //pegando o tamanho da tela
-const trabalho = require ('../assets/img/trabalho.jpg') //colocando uma imagem na aplicação
-
+ 
 import commonStyles from '../commonStyles'
 
-export default function Cadastro ({ navigation }){
-    return (
-    <View style={styles.container}>
-        <View>
-            <Text style={styles.logo}>ME CONTRATA AÊ</Text>
+
+const tela = require ('../assets/img/trabalho.jpg')
+export default props => {
+    return(
+        
+        <View style={styles.container}>
+                <View>
+                    <Text style={styles.titleName}>Faça seu Cadastro</Text>
+                </View>
+
+                <View style={styles.inputName} >
+                    <TextInput placeholder="Name"></TextInput>
+                </View>
+                
+                <View style={styles.inputName} >
+                    <TextInput placeholder="Email"></TextInput>
+                </View>
+
+                <View style={styles.inputName} >
+                    <TextInput placeholder="Telefone"></TextInput>
+                </View>
+
+                <View style={styles.inputName} >
+                    <TextInput placeholder="Especialidade"></TextInput>
+                </View>
+
+                <View style={styles.inputName} >
+                    <TextInput placeholder="Estado"></TextInput>
+                </View>
+                
+                <View style={styles.inputName} >
+                    <TextInput placeholder="Cidade"></TextInput>
+                </View>
+
+                <View style={styles.inputName} >
+                    <TextInput placeholder="Estado"></TextInput>
+                </View>
+
+                <View>
+                    <TouchableOpacity style={styles.btnCadastro}>
+                        <Text style={styles.txtBtnCadastro}>Cadastrar</Text>   
+                    </TouchableOpacity>   
+                </View>
+            
         </View>
-
-        <View style={styles.image}>
-            <Image source={trabalho} width={150} height={190}/>
-        </View>
-
-        <View style={styles.description}> 
-            <Text style={styles.title}>Seja bem vindo ao Me contrata AÊ</Text>
-            <Text style={styles.subTitle}>conheça os melhores profissionais para realizar seu trabalho</Text>
-
-        </View>
-
-        <View style={styles.botton}> 
-            <TouchableOpacity
-                style={styles.btn}
-                onPress={ () =>  navigation.navigate('Login')}
-            >
-            <Text style={styles.btnText}>Login</Text>
-            </TouchableOpacity>
-        </View>
-
-    </View>
+        
+        
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1, //estilo ocupa toda a tela
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingLeft: 25,
-        paddingRight: 25,
-        backgroundColor: commonStyles.colors.mainContainer
-    }, 
-    logo: {
-        marginTop: -100,
-        fontSize: 30,
-        //fontWeight: 'bold',
+    titleName: {
+        marginTop: 30,
+        fontSize: 35,
+        fontWeight:'bold',
         fontFamily: commonStyles.fontFamily,
-        color: commonStyles.colors.mainText,
+        color: '#4953B8',
+        alignItems: 'center',
+        textAlign: 'center',
+        },
+    inputName: {
+        width: width-50,
+        paddingTop: 10,
+        paddingBottom: -5,
+        borderBottomWidth: 2,
+        borderBottomColor: '#3646DB',
+        alignItems: 'center',
     },
     image: {
-        marginTop: -50
+        flex: 1,
+        resizeMode: 'cover',
+        justifyContent: 'center'
     },
-    description: {
-        alignItems: 'center'
+    container: {
+        justifyContent:'center',
+        alignItems:'center',
+        flex:1,
+        flexDirection: 'column',
+        backgroundColor: commonStyles.colors.mainContainer
     },
-    title: {
-        fontSize: 18,
-        fontWeight: 'bold',
-    },
-    subTitle: {
-        fontSize: 18,
-        marginTop: 25,
-        textAlign: 'center'
-    }, 
-    botton: {
-        position: 'absolute',
-        bottom: 30, //coloca o botao embaixo da tela
-    }, 
-    btn: {
-        width: width-50, 
+    btnCadastro: {
+        alignItems: 'center',
         paddingTop: 10,
         paddingBottom: 10,
-        borderRadius: 7,
         borderWidth: 2,
-        borderColor: '#FFF'
+        borderColor: '#3646DB',
+        width: width-50,
+        justifyContent:'center',
+        alignItems: 'center',
+        height: 60,
+        borderRadius: 10,
+        bottom: -50,
     },
-    btnText: {
+    txtBtnCadastro: {
+        fontSize: 16,
         fontWeight: 'bold',
-        fontSize: 18,
-        textAlign: 'center',
-        color: commonStyles.colors.btnColor
-    }
+        color: '#3646DB', 
+    },
+    
 })
