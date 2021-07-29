@@ -18,6 +18,10 @@ export function SingIn() {
         navigation.navigate('Cadastro')
     }
 
+    function handleHome(){
+        navigation.navigate('Home')
+    }
+
     return(
         <View style={styles.container}>
             <Image 
@@ -33,15 +37,20 @@ export function SingIn() {
 
                 <Text style={styles.subtitle}>
                     Contrate os Melhores profissionais {'\n'} 
-                    autônomos e liberais pagando o melhor preço
+                    autônomos e liberais pagando o melhor preço!
                 </Text>
 
                 <ButtonIcon 
                     title="Entrar"
-                    onPress={handleCadastro} //direciona quando o botão é clicado
+                    onPress={handleHome} //direciona para a tela através da funão criada
                 />
 
-               
+                <View style={{marginTop: 10}}>
+                    <ButtonIcon
+                        title="Cadastrar-se"
+                        onPress={handleCadastro} //direciona quando o botão é clicado
+                    />
+                </View>
 
             </View>
         </View>

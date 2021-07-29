@@ -14,15 +14,15 @@ export const styles = StyleSheet.create({
     },
     textCad:{
         textAlign: 'center',
-        fontSize: 25,
+        fontSize: 30,
         color: theme.colors.heading,
-        fontFamily: theme.fonts.text500,
+        fontFamily: theme.fonts.title800,
         marginBottom: 30 
     },
     input: {
         height: 60,
         width: size-80,
-        borderWidth: 1,
+        borderWidth: 1.5,
         borderRadius: 8,
         borderColor: theme.colors.heading,
         marginBottom: 20,
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     picker: {
         height: 60,
         width: size-80,
-        borderWidth: 1,
+        borderWidth: 1.5,
         borderRadius: 8,
         borderColor: theme.colors.heading,
         marginBottom: 20,
