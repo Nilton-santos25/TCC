@@ -1,13 +1,14 @@
 import  React, {useState} from 'react';
 import { View, Text, TextInput } from 'react-native';
-import { useNavigation } from '@react-navigation/native'
 import { Picker } from '@react-native-picker/picker';
+import { useNavigation } from '@react-navigation/native'
+
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { styles } from './styles'
-import { Inter_500Medium } from '@expo-google-fonts/inter';
 
-export function Cadastro(){
+export function SignUp(){
     const navigation = useNavigation();
 
     function handleHome(){
@@ -60,12 +61,14 @@ export function Cadastro(){
                     placeholder="Confirmar Senha" 
                     secureTextEntry={true}
                 />  
-
-                 <ButtonIcon
-                    title='Cadastrar'
-                    activeOpacity={0.8}
-                    onPress={handleHome}
-                 />  
+                
+                <View style={{marginTop: 20}}>
+                    <ButtonIcon
+                        title='Cadastrar'
+                        activeOpacity={0.8}
+                        onPress={handleHome}
+                    />  
+                </View>
 
             </View>
         </View>

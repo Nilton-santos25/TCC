@@ -10,14 +10,13 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: "column",
-        bottom: -50
     },
     textCad:{
         textAlign: 'center',
-        fontSize: 30,
+        fontSize: 35,
         color: theme.colors.heading,
         fontFamily: theme.fonts.title800,
-        marginBottom: 30 
+        marginBottom: 30
     },
     input: {
         height: 60,
@@ -26,7 +25,7 @@ export const styles = StyleSheet.create({
         borderRadius: 8,
         borderColor: theme.colors.heading,
         marginBottom: 20,
-        textAlign: 'center'
+        textAlign: 'center',
     },
     picker: {
         height: 60,

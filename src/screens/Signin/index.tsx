@@ -14,8 +14,8 @@ export function SingIn() {
     const navigation = useNavigation();
     
     //função para a navegação das telas 
-    function handleCadastro(){
-        navigation.navigate('Cadastro')
+    function handleSignUp(){
+        navigation.navigate('SignUp')
     }
 
     function handleHome(){
@@ -45,10 +45,10 @@ export function SingIn() {
                     onPress={handleHome} //direciona para a tela através da funão criada
                 />
 
-                <View style={{marginTop: 10}}>
+                <View style={{marginTop: 15}}>
                     <ButtonIcon
                         title="Cadastrar-se"
-                        onPress={handleCadastro} //direciona quando o botão é clicado
+                        onPress={handleSignUp} //direciona quando o botão é clicado
                     />
                 </View>
 
