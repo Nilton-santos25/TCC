@@ -6,6 +6,7 @@ export const theme = {
         secondary: '#FFF',
         secondary100: '#F2F3F5',
         secondary80: '#a8d8ea' ,
+        secondary60: '#a9eee6'
     },
 
     fonts: {

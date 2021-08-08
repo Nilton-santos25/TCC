@@ -3,44 +3,31 @@ import { StyleSheet } from "react-native";
 import { theme } from "../../global/styles/theme";
 
 export const styles = StyleSheet.create({
-    container:{
-        width: '100%',
-        height: '126px',
-
-        backgroundColor: 'blue',
-
+    container: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        
         flexDirection: "row",
+    },
+    cardButton: {
+        width: '100%',
+        height: 126,
+        alignItems: 'center',
         justifyContent: "space-between",
-        alignItems: "center",
+        flexDirection: 'row',
+        padding: 15,
+        borderRadius: 10,
+        backgroundColor: theme.colors.secondary60,
+        marginBottom: 20
 
-        padding: 24,
-        marginBottom: 16
+    },
+    textCard: {
+        color: theme.colors.heading,
+        fontSize: 25,
+        fontFamily: theme.fonts.title600,
     },
     CardImage: {
-
+        width: 150,
+        height: 86,
     }
-})
-
-
-
-// export const styles = StyleSheet.create({
-//     container: {
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//     },
-//     cardButton: {
-//         width: '90%',
-//         height: 100,
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//         borderRadius: 17,
-//         backgroundColor: theme.colors.secondary80,
-//         marginBottom: 20
-
-//     },
-//     textCard: {
-//         color: theme.colors.heading,
-//         fontSize: 40,
-//         fontFamily: theme.fonts.title800,
-//     }
-// }) 
+}) 
